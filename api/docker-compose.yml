@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: 'no'
+    ports:
+      - 3306:3306
+    networks:
+      - mariadb-net
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: cube
+      MARIADB_PASSWORD: cube_pass
+      MARIADB_USER: cube_user
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: 'no'
+    networks:
+      - mariadb-net
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+
+networks:
+  mariadb-net:

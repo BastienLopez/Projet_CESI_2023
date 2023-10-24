@@ -1,0 +1,109 @@
+.promo-table tr {
+    border-bottom: 1px solid black;
+  }
+
+.promo-table td.actions {
+  border-bottom: none;
+}
+
+th{
+  padding: "0 5px";
+  backgroundColor: "gray";
+  textAlign: "center";
+}
+
+td{
+  padding: "0 15px";
+  backgroundColor: "#DFE0E7";
+  borderRadius: "5px";
+  textAlign: "center";
+}
+
+#menu-tab {
+	/*background: white;*/
+    font-family: 'trebuchet ms', geneva;
+	font-size: 11pt;
+	color:black;
+	}
+
+#menu-tab a {
+color: grey;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+font-variant: normal;
+}
+/*--------------Dimensions tableau--------------*/
+
+#page-wrap {
+	  width: 70%;
+	  margin: 10px auto;
+
+	}
+
+/*--------------Onglets--------------*/
+
+    .tabs {
+      position: relative;
+      min-height: 480px; /* This part sucks */
+      clear: both;
+      margin: 25px 0;
+    }
+    .tab {
+      float: left;
+    }
+    .tab label {
+      background: rgba(170, 185, 185, 0.97);
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-left: -1px;
+      position: relative;
+      left: 1px;
+      border-radius: 10px 10px 0px 0px;
+      box-shadow: 3px -3px 6px rgba(0, 0, 0, 0.71);
+    }
+    .tab [type=radio] {
+      display: none;
+    }
+
+/*--------------Contenu article onglet--------------*/
+    .content {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 0px 10px 10px 10px;
+      box-shadow:6px 6px 10px rgba(0, 0, 0, 0.41);
+
+    }
+
+/*-------------Onglets actifs--------------*/
+
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 1px solid white;
+      z-index: 2;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+    [type=radio]:checked ~ label ~ .content > * {
+      opacity: 1;
+
+      -webkit-transform: translateX(0);
+      -moz-transform:    translateX(0);
+      -ms-transform:     translateX(0);
+      -o-transform:      translateX(0);
+    }
+
+/*-------------Pop up formulaire--------------*/
+
+  .close-button {
+    margin-left: 370px;
+    margin-top: -35px;
+    position: absolute;
+  }

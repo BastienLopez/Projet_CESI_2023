@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  frontend:
+    image: ghcr.io/rjcfer/frontend
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - cubes-net
+
+  api:
+    image: ghcr.io/rjcfer/api
+    environment:
+      - DB_HOST=db
+      - ENVIROMENT=production
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 2900:2900
+    networks:
+      - cubes-net
+    restart: on-failure:10
+
+networks:
+  cubes-net:

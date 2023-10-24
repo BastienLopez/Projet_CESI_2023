@@ -1,0 +1,47 @@
+version: "3.1"
+services:
+  db:
+    image: mariadb:10.6
+    restart: on-failure:1
+    networks:
+      - cubes-net
+    command: --max_allowed_packet=32505856
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: cube
+      MARIADB_PASSWORD: cube_pass
+      MARIADB_USER: cube_user
+    ports:
+      - 3606:3606
+    # volumes:
+    #   - ./db-data:/var/lib/mysql
+
+  frontend:
+    image: ghcr.io/rjcfer/frontend
+    networks:
+      - cubes-net
+    ports:
+      - 3000:80
+    environment:
+      API_IP: "http://51.107.22.11:"
+      API_PORT: "2900"
+
+  api:
+    image: ghcr.io/rjcfer/api
+    environment:
+      DB_HOST: db
+      DB_NAME: cube
+      DB_USER: cube_user
+      DB_PASSWORD: cube_pass
+      DB_PORT: 3306
+      ENVIROMENT: production
+    ports:
+      - 2900:2900
+    networks:
+      - cubes-net
+    depends_on:
+      - db
+    restart: on-failure:10
+
+networks:
+  cubes-net:

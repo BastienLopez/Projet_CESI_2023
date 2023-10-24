@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "reactjs-popup": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
+    "@types/react": "^18.2.14",
+    "@types/react-bootstrap": "^0.32.32",
+    "@types/react-dom": "^18.2.6",
+    "@types/react-modal": "^3.16.0",
+    "@types/react-router-dom": "^5.3.3",
+    "prettier": "^2.8.8",
+    "react-router-dom": "^6.14.1",
+    "react": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-tabs": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/react-modal": "^3.16.0"
+  }
+}

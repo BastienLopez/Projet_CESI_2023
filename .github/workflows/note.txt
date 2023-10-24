@@ -1,0 +1,3 @@
+Assurez-vous de remplacer /path/to/project par le chemin d'accès réel vers votre projet sur le serveur.
+
+Ce fichier de workflow utilise l'action appleboy/ssh-action pour se connecter au serveur via SSH et exécuter les commandes nécessaires pour déployer les conteneurs Docker. Les informations d'authentification du serveur (hôte, nom d'utilisateur et mot de passe) doivent être configurées en tant que secrets dans les paramètres du référentiel GitHub.
